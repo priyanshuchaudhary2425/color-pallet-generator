@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ImagePaletteGenerator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    {% extends 'bootstrap/base.html' %}
+    {% import "bootstrap/wtf.html" as wtf %}
+
+</head>
+
+<body>
+    {% block content %}
+    <nav class="navbar navbar-light bg-light navbar-gradient">
+        <div class="container-fluid ">
+            <a class="navbar-brand text-center" href="#">
+                ImagePaletteGenerator
+            </a>
+        </div>
+    </nav>
+
+    <hr>
+
+    <div class="file-upload">
+        {{ wtf.quick_form(form, button_map={"submit": "primary"}) }}
+        {{ form.csrf_token }}
+    </div>
+
+    <div class="image-greeting">
+        <h1>Your Image below🤩</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="show-image">
+                {% if image_data %}
+                <img src="data:image/{{ image.format.lower() }};base64,{{ image_data }}" alt="Uploaded Image">
+                {% else %}
+                <img src="https://img.freepik.com/premium-photo/mountains-during-flowers-blossom-sunrise-flowers-mountain-hills-beautiful-natural-landscape-summer-time-mountainimage_647656-1502.jpg?w=2000">
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="image-details">
+                 <div class="color-samples">
+                    {% for color in colors %}
+                    <div class="color-sample" style="background-color: {{ color }};">
+                        <p class="color-code">{{ color }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+</body>
+
+</html>

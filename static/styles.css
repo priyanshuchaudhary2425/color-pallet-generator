@@ -1,0 +1,61 @@
+.navbar-gradient {
+    background: linear-gradient(to right, #C4DFDF, #1F618D);
+}
+
+.file-upload {
+    background: linear-gradient(to right, #E3F4F4, #F8F6F4);
+    padding: 20px;
+}
+
+.image-greeting {
+    background: linear-gradient(to right, #A9CDDF, #206D9F);
+    padding: 2px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.show-image {
+    background: linear-gradient(to right, #C9D6E3, #486883);
+    max-width: 500px;
+    max-height: 500px;
+    margin: 10px;
+}
+
+.show-image img {
+    background: linear-gradient(to right, #A9CDDF, #206D9F);
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.color-sample {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.color-sample {
+    margin: 20px;
+    padding: 20px;
+
+}
+
+.color-code {
+    transform: translate(-180%, 100%);
+    color: #000000;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.image-details {
+    padding: 20px;
+}
+
+
+.color-samples {
+    display: flex;
+    flex-wrap: wrap;
+}
